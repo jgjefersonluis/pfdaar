@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from django.contrib import admin
+
+from .models import Diario
+
+
+@admin.register(Diario)
+class DiarioAdmin(admin.ModelAdmin):
+    list_display = ('data', 'hora', 'local', 'profissional', 'acao', 'sujeitos', 'avaliacao')
