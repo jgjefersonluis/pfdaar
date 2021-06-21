@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'tarefas',
     'graficos',
     'users',
-    'accounts'
+    'accounts',
     'gunicorn',
 ]
 
