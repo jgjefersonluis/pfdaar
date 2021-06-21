@@ -10,7 +10,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
-
+            {% if user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link" href="/list/">Clientes</a>
             </li>
@@ -32,21 +32,23 @@
                     Gráficos
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Etnia</a>
-                    <a class="dropdown-item" href="#">Faixa Etária</a>
-                    <a class="dropdown-item" href="#">Uso de Substâncias</a>
-                    <a class="dropdown-item" href="#">Genero</a>
+                    <a class="dropdown-item" href="{% url 'etnia' %}">Etnia</a>
+                    <a class="dropdown-item" href="{% url 'faixa-etaria' %}">Faixa Etária</a>
+                    <a class="dropdown-item" href="{% url 'substancias' %}">Uso de Substâncias</a>
+                    <a class="dropdown-item" href="{% url 'genero' %}">Genero</a>
                 </div>
             </li>
 
-
+            {% else %}
             <li class="nav-item">
-                <a class="nav-link" href="#">Entrar</a>
+                <a class="nav-link" href="/accounts/login">Entrar</a>
             </li>
-
+            {% endif %}
+            {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link" href="#">Logout/Sair</a>
+                <a class="nav-link" href="/accounts/logout">Logout/Sair</a>
             </li>
+            {% endif %}
 
 
         </ul>
