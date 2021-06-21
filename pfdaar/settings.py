@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'graficos',
     'users',
     'accounts',
-    'gunicorn',
+
 ]
 
 MIDDLEWARE = [
